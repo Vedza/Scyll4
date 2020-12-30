@@ -32,16 +32,29 @@ eepadmin:0842875692a
 Adminnin:tanin123
 ...
 
-$ python3 scylla.py -t "name" -q "*johndoe*" -b -c 1
+$ python3 scylla.py -t "name" -q "John Doe" --beautify --count 1 --offset 40 
 [
     {
-        "id": "78fada045575e0f65f10362962e8294e",
+        "id": "028da885127160204e848656e311288e",
         "fields": {
-            "domain": "twitter.com",
-            "password": "therock",
-            "name": "johndoe1@gmail.com"
+            "domain": "000webhost.com",
+            "name": "john doe",
+            "ip": "12.48.220.131",
+            "password": "18jam93",
+            "email": "jdoedjoh@aol.com"
         }
     }
 ]
 
+$ python3 scylla.py -t "email" -q "*JohnDoe*" --beautify --count 1 --offset 2
+[
+    {
+        "id": "209ec04371d133daaed70cb5bd065871",
+        "fields": {
+            "domain": "Collection1-btc-combo",
+            "password": "sprite",
+            "email": "johndoe@hotmail.com"
+        }
+    }
+]
 ```
