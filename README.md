@@ -2,6 +2,7 @@
 
 Small python script to use Scyll4 API
 
+#### Usage
 ```
 usage: scylla.py [-h] [-c COUNT] [-o OFFSET] [-t TYPE] [-q QUERY] [-C] [-b] [-s SAVE]
 
@@ -21,7 +22,7 @@ optional arguments:
   -s SAVE, --save SAVE  Save Scylla results to output file
 ```
 
-###Examples
+#### Examples
 
 ````
 $ python3 scylla.py -t "username" -q "*admin*" -C      
