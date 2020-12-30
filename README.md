@@ -24,7 +24,7 @@ optional arguments:
 
 #### Examples
 
-````
+``` sh
 $ python3 scylla.py -t "username" -q "*admin*" -C      
 Admin:lt184577770
 admin:aa1234
@@ -44,4 +44,4 @@ $ python3 scylla.py -t "name" -q "*johndoe*" -b -c 1
     }
 ]
 
-````
+```
