@@ -13,10 +13,34 @@ optional arguments:
                         number of records to retrieve (default is 500)
   -o OFFSET, --offset OFFSET
                         record start offset value (default is 0)
-  -t TYPE, --type TYPE  Type of record data to search for (email, user_id, user, name, ip, pass_hash, password, pass_salt, domain)
+  -t TYPE, --type TYPE  Type of record data to search for (email, user_id, username, name, ip, pass_hash, password, pass_salt, domain)
   -q QUERY, --query QUERY
                         query to search
-  -C, --combo           Combo output user:pass only
+  -C, --combo           Combo output username|email:pass only
   -b, --beautify        Beautify json
   -s SAVE, --save SAVE  Save Scylla results to output file
 ```
+
+###Examples
+
+````
+$ python3 scylla.py -t "username" -q "*admin*" -C      
+Admin:lt184577770
+admin:aa1234
+eepadmin:0842875692a
+Adminnin:tanin123
+...
+
+$ python3 scylla.py -t "name" -q "*johndoe*" -b -c 1
+[
+    {
+        "id": "78fada045575e0f65f10362962e8294e",
+        "fields": {
+            "domain": "twitter.com",
+            "password": "therock",
+            "name": "johndoe1@gmail.com"
+        }
+    }
+]
+
+````
