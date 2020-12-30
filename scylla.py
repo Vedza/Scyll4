@@ -6,7 +6,7 @@ import urllib3
 
 urllib3.disable_warnings()
 
-parser = argparse.ArgumentParser(description='scylla.sh CLI tool')
+parser = argparse.ArgumentParser(description='Python script to use Scyll4 API')
 
 parser.add_argument('-c', '--count', help='number of records to retrieve (default is 500)', default='500')
 parser.add_argument('-o', '--offset', help='record start offset value (default is 0)', default='0')
