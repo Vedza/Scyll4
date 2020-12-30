@@ -25,13 +25,22 @@ optional arguments:
 #### Examples
 
 ``` sh
-$ python3 scylla.py -t "username" -q "*admin*" -C      
-Admin:lt184577770
-admin:aa1234
-eepadmin:0842875692a
-Adminnin:tanin123
-...
+$ python3 scylla.py -t "username" -q "admin" -b -c 1 -o 9 
+[
+    {
+        "id": "08e7105b287bb60f70d245c9910f3a78",
+        "fields": {
+            "username": "Admin",
+            "domain": "hostinger.com",
+            "ip": "79.102.128.13",
+            "password": "lt184577770",
+            "email": "mielupis@gmail.com"
+        }
+    }
+]
+```
 
+``` sh
 $ python3 scylla.py -t "name" -q "John Doe" --beautify --count 1 --offset 40 
 [
     {
@@ -45,16 +54,10 @@ $ python3 scylla.py -t "name" -q "John Doe" --beautify --count 1 --offset 40
         }
     }
 ]
+```
 
-$ python3 scylla.py -t "email" -q "*JohnDoe*" --beautify --count 1 --offset 2
-[
-    {
-        "id": "209ec04371d133daaed70cb5bd065871",
-        "fields": {
-            "domain": "Collection1-btc-combo",
-            "password": "sprite",
-            "email": "johndoe@hotmail.com"
-        }
-    }
-]
+``` sh
+$ python3 scylla.py -t "email" -q "*JohnDoe*" --beautify --count 2 --offset 2 --combo
+johndoe@hotmail.com:sprite
+johndoe021@gmail.com:combsoma47
 ```
