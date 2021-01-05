@@ -57,7 +57,7 @@ $ python3 scylla.py -t "name" -q "John Doe" --beautify --count 1 --offset 40
 ```
 
 ``` sh
-$ python3 scylla.py -t "email" -q "*JohnDoe*" --beautify --count 2 --offset 2 --combo
+$ python3 scylla.py -t "email" -q "*JohnDoe*" --count 2 --offset 2 --combo
 johndoe@hotmail.com:sprite
 johndoe021@gmail.com:combsoma47
 ```
