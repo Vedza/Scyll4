@@ -24,15 +24,18 @@ url = "https://scyll4.com/search?q={}:{}*&size={}&start={}".format(args.type, ar
                                                                    args.offset)
 
 response = requests.request("GET", url, verify=False)
+if response.status_code == 500:
+    print("Request failed.")
+    exit(1)
+elif response.status_code == 502:
+    print("502 Bad Gateway")
+    exit(1)
 
 if args.combo:
     if args.type != "username" and args.type != "email":
         print("Combo mode ony works with user or email.")
         exit(0)
     output = ''
-    if response.status_code == 500:
-        print("Request failed.")
-        exit(1)
     for p in response.json():
         try:
             output += "{}:{}\n".format(p['fields'][args.type], p['fields']['password'])
