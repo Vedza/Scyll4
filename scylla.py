@@ -6,7 +6,7 @@ import urllib3
 
 urllib3.disable_warnings()
 
-parser = argparse.ArgumentParser(description='Python script to use Scyll4 API')
+parser = argparse.ArgumentParser(description='Python script to use scylla.sh API')
 
 parser.add_argument('-c', '--count', help='number of records to retrieve (default is 500)', default='500')
 parser.add_argument('-o', '--offset', help='record start offset value (default is 0)', default='0')
@@ -20,7 +20,7 @@ parser.add_argument('-s', '--save', help='Save Scylla results to output file')
 
 args = parser.parse_args()
 
-url = "https://scyll4.com/search?q={}:{}*&size={}&start={}".format(args.type, args.query, args.count,
+url = "https://scylla.sh/search?q={}:{}*&size={}&start={}".format(args.type, args.query, args.count,
                                                                    args.offset)
 
 response = requests.request("GET", url, verify=False)
